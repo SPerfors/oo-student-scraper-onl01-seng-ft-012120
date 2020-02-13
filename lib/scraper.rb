@@ -13,8 +13,9 @@ class Scraper
       student_details = {}
       student_details[:name] = student.css("h4.student-name").text
       student_details[:location] = student.css("p.student-location").text
-      profile_path = student.css("a").attribute("href").value
-      student_details[:profile_url] = "./fixtures/student-site/" + profile_path
+      #profile_path = student.css("a").attribute("href").value
+      student_details[:profile_url] = student.css("a").attribute("href").value
+      #"./fixtures/student-site/" + profile_path
       students << student_details
     end
     students
